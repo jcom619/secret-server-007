@@ -1,3 +1,3 @@
-create a dotenv
+# create a dotenv
 
-serve w/ express ... somewhere?
+## serve w/ express ... somewhere?
