@@ -9,29 +9,14 @@
   "scripts": {
     "start": "node server.js"
   },
-  "dependencies": {
-    "express": "^4.17.1",
-    "rowdy-logger": "^1.0.2"
-  },
   "engines": {
     "node": "12.x"
   },
-<<<<<<< HEAD
   "homepage": "https://github.com/jcom619/secret-server-007#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "rowdy-logger": "^1.0.2"
   }
-=======
-  "repository": {
-    "url": "https://glitch.com/edit/#!/hello-express"
-  },
-  "license": "MIT",
-  "keywords": [
-    "node",
-    "glitch",
-    "express"
-  ]
->>>>>>> 5b7a07ba64da62c5aeaddd06770c448fa0854610
 }
