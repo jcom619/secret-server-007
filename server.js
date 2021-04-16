@@ -33,7 +33,9 @@ const PORT = process.env.MY_SERVER_PORT || 8080;
 //     }
 //* ================================================================================================
 //*|   ⚡︎   ⚡︎   ⚡︎   ⚡︎   ⚡︎   ⚡︎   ⚡︎   ⚡︎   ⚡︎  ⚡︎   ⚡︎   ⚡︎   ⚡︎   ⚡︎   ⚡︎  ⚡︎   ⚡︎   ⚡︎   ⚡︎   ⚡︎   ⚡︎  ⚡︎   ⚡︎   ⚡︎  |
-//*|                                   setting middleware                                          |
+
+//*|                              setting - middle...where?                                        |
+
 //*|   ⚡︎   ⚡︎   ⚡︎   ⚡︎   ⚡︎   ⚡︎   ⚡︎   ⚡︎   ⚡︎  ⚡︎   ⚡︎   ⚡︎   ⚡︎   ⚡︎   ⚡︎  ⚡︎   ⚡︎   ⚡︎   ⚡︎   ⚡︎   ⚡︎  ⚡︎   ⚡︎   ⚡︎  |
 //* ================================================================================================
 
@@ -49,51 +51,39 @@ app.use(express.static(__dirname + "public"));
 //!                   |   ⚡︎   ⚡︎   ⚡︎   |☠︎|  Routes  |☠︎|   ⚡︎   ⚡︎   ⚡︎   |
 //?                   |   ⚡︎   ⚡︎   ⚡︎   |☠︎|==========|☠︎|   ⚡︎   ⚡︎   ⚡︎   |
 
-// app.get("/", (req, res) => {
-
-// });
-
 let city = "san diego";
-// let weather = {
-// fetchWeather: function (city) {
+
 app.get("/api", (req, res) => {
-   axios
-      .get(
-         "https://api.openweathermap.org/data/2.5/weather?q=" +
-            city +
-            "&appid=" +
-            api_key +
-            "&units=imperial"
-      )
-      .then((response) => {
-         res.json(response);
-      });
-   if (!response.ok) {
-      console.log(response);
-   } else {
-      // console.log(err);
+   fetch(
+      "https://api.openweathermap.org/data/2.5/weather?q=" +
+         city +
+         "&appid=" +
+         api_key +
+         "&units=imperial"
+   );
+   try {
+      res.json(response);
+   } catch (err) {
+      console.log(err);
       console.log("No weather found.");
+   } finally {
+      console.log(data);
    }
-});
-// .then((data) => this.displayWeather(data));
-// console.log(data);
-// }
-// res.send("¿hola...Mundo?");
-// console.log(weather.fetchWeather("el paso"));
-// });
-//?                   |   ⚡︎   ⚡︎   ⚡︎   |☠︎|==========|☠︎|   ⚡︎   ⚡︎   ⚡︎   |
-//!                   |   ⚡︎   ⚡︎   ⚡︎   |☠︎|          |☠︎|   ⚡︎   ⚡︎   ⚡︎   |
-//?                   |   ⚡︎   ⚡︎   ⚡︎   |☠︎|==========|☠︎|   ⚡︎   ⚡︎   ⚡︎   |
 
-//* |   ⚡︎   ⚡︎   ⚡︎  | ☠︎ | ⚡︎ | ☠︎ |  ☠︎  ⚡︎   ⚡︎   ⚡︎   ||   ⚡︎   ⚡︎   ⚡︎  | ☠︎ | ⚡︎ | ☠︎ |  ☠︎  ⚡︎   ⚡︎   ⚡︎   |?\\
+   //?                   |   ⚡︎   ⚡︎   ⚡︎   |☠︎|==========|☠︎|   ⚡︎   ⚡︎   ⚡︎   |
+   //!                   |   ⚡︎   ⚡︎   ⚡︎   |☠︎|          |☠︎|   ⚡︎   ⚡︎   ⚡︎   |
+   //?                   |   ⚡︎   ⚡︎   ⚡︎   |☠︎|==========|☠︎|   ⚡︎   ⚡︎   ⚡︎   |
 
-app.listen(PORT, () => {
-   rowdyResults.print();
-   console.log(
-      response,
-      `\n                         ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎\n                        you got served!\n\n                              ${PORT}      \n                         ☔︎ ☔︎ ☔︎ ☔︎ ☔︎\n`
-   );
-   console.log(
-      ` \n |  ⚡︎ |  ☠︎  |  ⚡︎ |  ☠︎  |  ⚡︎ |  ☠︎  |   ⚡︎ |  ☠︎  |  ⚡︎ |  ☠︎  | \n --------------------------------------------------------------\n | ${app.settings.views} |\n`
-   );
+   //* |   ⚡︎   ⚡︎   ⚡︎  | ☠︎ | ⚡︎ | ☠︎ |  ☠︎  ⚡︎   ⚡︎   ⚡︎   ||   ⚡︎   ⚡︎   ⚡︎  | ☠︎ | ⚡︎ | ☠︎ |  ☠︎  ⚡︎   ⚡︎   ⚡︎   |?\\
+
+   app.listen(PORT, () => {
+      rowdyResults.print();
+      console.log(
+         response,
+         `\n                         ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎ ☁︎\n                        you got served!\n\n                              ${PORT}      \n                         ☔︎ ☔︎ ☔︎ ☔︎ ☔︎\n`
+      );
+      console.log(
+         ` \n |  ⚡︎ |  ☠︎  |  ⚡︎ |  ☠︎  |  ⚡︎ |  ☠︎  |   ⚡︎ |  ☠︎  |  ⚡︎ |  ☠︎  | \n --------------------------------------------------------------\n | ${app.settings.views} |\n`
+      );
+   });
 });
