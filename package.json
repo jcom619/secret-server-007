@@ -1,25 +1,37 @@
 {
-  "name": "secret-server-007",
-  "version": "1.0.0",
-  "description": "create a dotenv",
-  "main": "index.js",
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "hello-express",
+  "version": "0.0.1",
+  "description": "A simple Node app built on Express, instantly up and running.",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jcom619/secret-server-007.git"
+  "dependencies": {
+    "express": "^4.17.1",
+    "rowdy-logger": "^1.0.2"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jcom619/secret-server-007/issues"
+  "engines": {
+    "node": "12.x"
   },
+<<<<<<< HEAD
   "homepage": "https://github.com/jcom619/secret-server-007#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1"
   }
+=======
+  "repository": {
+    "url": "https://glitch.com/edit/#!/hello-express"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+>>>>>>> 5b7a07ba64da62c5aeaddd06770c448fa0854610
 }
